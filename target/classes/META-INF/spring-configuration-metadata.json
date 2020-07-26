@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "site",
+      "type": "com.yyrm.portal.config.SiteOptions",
+      "sourceType": "com.yyrm.portal.config.SiteOptions"
+    },
+    {
+      "name": "site.controls",
+      "type": "com.yyrm.portal.config.SiteOptions$Controls",
+      "sourceType": "com.yyrm.portal.config.SiteOptions",
+      "sourceMethod": "getControls()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "site.controls.register",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.yyrm.portal.config.SiteOptions$Controls",
+      "defaultValue": false
+    },
+    {
+      "name": "site.location",
+      "type": "java.lang.String",
+      "description": "运行文件存储路径",
+      "sourceType": "com.yyrm.portal.config.SiteOptions"
+    },
+    {
+      "name": "site.options",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "属性配置",
+      "sourceType": "com.yyrm.portal.config.SiteOptions"
+    },
+    {
+      "name": "site.version",
+      "type": "java.lang.String",
+      "description": "系统版本号",
+      "sourceType": "com.yyrm.portal.config.SiteOptions"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,81 @@
+server:
+    port: 8082
+    use-forward-headers: true
+    undertow:
+        io-threads: 2
+        worker-threads: 32
+        buffer-size: 1024
+        directBuffers: true
+spring:
+    devtools:
+        enabled: true
+    cache:
+        type: ehcache
+        ehcache:
+            config: classpath:ehcache.xml
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/yyrm?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+        username: root
+        password: 123
+    jpa:
+        database: mysql
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        properties:
+            hibernate.format_sql: true
+            hibernate.naming.physical-strategy: org.hibernate.scripts.model.naming.PhysicalNamingStrategyStandardImpl
+            hibernate.cache.use_second_level_cache: false
+    http:
+        encoding:
+            charset: UTF-8
+            force: true
+            enabled: true
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+    freemarker:
+        template-loader-path:
+        - classpath:/templates
+        cache: false
+        check-template-location: true
+        charset: utf-8
+        settings:
+            classic_compatible: true
+            template_exception_handler: rethrow
+            template_update_delay: 0
+            datetime_format: yyyy-MM-dd HH:mm
+            number_format: 0.##
+            auto_import: /utils.ftl as utils
+
+shiro:
+    web:
+        enabled: true
+    annotations:
+        enabled: false
+    loginUrl: /login
+    successUrl: /index
+    unauthorizedUrl: /error/reject.html
+    sessionManager:
+        cookie:
+            maxAge: 604800
+    rememberMeManager:
+        cookie:
+            maxAge: 604800
+logging:
+    level:
+        org.springframework: WARN
+        org.hibernate: WARN
+
+site:
+    version: 3.5.0
+    location: C:\\Users\\HI\\.IntelliJIdea2019.3\\system\\compile-server
+    controls:
+        register: true
+
+    options:
+        theme: front
+
