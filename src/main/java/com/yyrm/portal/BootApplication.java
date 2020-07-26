@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 
 /**
  * SprintBootApplication huangjun
+ *  gitbug https://github.com/huangjund0820/yyrmtest/
  */
 @Slf4j
 @SpringBootApplication
